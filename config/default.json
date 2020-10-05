@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://zam:AllahoAkbar1@contactkeept.gtixi.mongodb.net/contactKeept?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://zam:AllahoAkbar1@contactkeept.gtixi.mongodb.net/contactKeept?retryWrites=true&w=majority",
+  "jwtSecret":"my secret"
 }

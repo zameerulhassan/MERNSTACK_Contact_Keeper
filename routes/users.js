@@ -2,9 +2,13 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/Users"); //bringing in user-schema.
 const bcrypt = require("bcryptjs");
+//bring JWK
+const jwt = require("jsonwebtoken");
+//to get jwtSecret
+const config = require("config");
+
 //to check and validate
 const { body, validationResult } = require("express-validator");
-const { genSalt } = require("bcryptjs");
 
 //@route    POST   api/users
 //@desc     Register a user
@@ -38,7 +42,22 @@ router.post(
       const salt = await bcrypt.genSalt(10);
       user.password = await bcrypt.hash(password, salt);
       await user.save();
-      res.send("user saved");
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+      jwt.sign(
+        payload,
+        config.get('jwtSecret'),
+        {
+          expiresIn: 360000,
+        },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
     } catch (error) {
       console.error(error.message);
       res.status(500).send("server error");
