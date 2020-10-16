@@ -194,6 +194,9 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 0.3rem; /* I added */
+  min-width: 4rem; /* I added */
+  
 }
 
 .btn-link {
@@ -220,7 +223,8 @@ img {
   margin: 0.3rem;
   background: var(--light-color);
   color: #333;
-  border-radius: 5px;
+  border-radius: 0.3rem;
+  min-width: 10rem;
 }
 
 .alert {
