@@ -14,6 +14,7 @@ import {
   CLEAR_FILTER,
   SET_ALERT,
   REMOVE_ALERT,
+  CONTACT_ERROR,
 } from "../types";
 export default (state, action) => {
   switch (action.type) {
@@ -47,6 +48,11 @@ export default (state, action) => {
         ...state,
         current: action.payload,
       };
+      case CONTACT_ERROR:
+        return{
+          ...state,
+          error:action.payload
+        }
     case CLEAR_CURRENT:
       return {
         ...state,
