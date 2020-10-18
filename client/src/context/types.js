@@ -1,3 +1,4 @@
+export const GET_CONTACTS = 'GET_CONTACTS';
 export const ADD_CONTACT = "ADD_CONTACT";
 export const DELETE_CONTACT = "DELETE_CONTACT";
 export const SET_CURRENT = "SET_CONTACT";
@@ -14,4 +15,4 @@ export const AUTH_ERROR = "AUTH_ERROR";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
-export const CLEAR_ERROR = "CLEAR_ERROR";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
