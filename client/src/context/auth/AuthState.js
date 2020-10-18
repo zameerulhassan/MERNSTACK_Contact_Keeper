@@ -57,8 +57,8 @@ const AuthState = (props) => {
       });
     }
   };
-// Logout
-const logout = () => dispatch({ type: LOGOUT });  
+  // Logout
+  const logout = () => dispatch({ type: LOGOUT });
   //Login User
   const login = async (formData) => {
     const config = {
