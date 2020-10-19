@@ -1,6 +1,7 @@
 node_modules
 note.txt
-config
+/config/production.json
+/config/default.json
 
 # dependencies
 /client/node_modules
