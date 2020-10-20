@@ -2,6 +2,9 @@ const express = require("express");
 const connectDB = require("./config/db");
 const path = require("path");
 const { init } = require("./models/Users");
+const mongoSanitize = require("express-mongo-sanitize");
+const helmet = require("helmet");
+const xss = require("xss-clean");
 const app = express();
 ("express-validator");
 
@@ -11,6 +14,14 @@ app.use(express.json({ extended: false }));
 
 //connect DB
 connectDB();
+
+//Sanitize
+app.use(mongoSanitize());
+//set security headers
+app.use(helmet());
+//XSS-Clean
+//This will sanitize any data in req.body, req.query, and req.params
+app.use(xss());
 
 //Define Routes
 app.use("/api/contacts", require("./routes/contacts"));

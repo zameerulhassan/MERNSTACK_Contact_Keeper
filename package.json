@@ -10,7 +10,7 @@
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "zam",
   "license": "ISC",
@@ -18,9 +18,12 @@
     "bcryptjs": "^2.4.3",
     "config": "^3.3.2",
     "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.0.0",
     "express-validator": "^6.6.1",
+    "helmet": "^4.1.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.7"
+    "mongoose": "^5.10.7",
+    "xss-clean": "^0.1.1"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
