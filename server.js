@@ -16,12 +16,12 @@ app.use(express.json({ extended: false }));
 connectDB();
 
 //Sanitize
-app.use(mongoSanitize());
-//set security headers
-app.use(helmet());
-// XSS-Clean
-// This will sanitize any data in req.body, req.query, and req.params
-app.use(xss());
+// app.use(mongoSanitize());
+// //set security headers
+// app.use(helmet());
+// // XSS-Clean
+// // This will sanitize any data in req.body, req.query, and req.params
+// app.use(xss());
 
 //Define Routes
 app.use("/api/contacts", require("./routes/contacts"));
