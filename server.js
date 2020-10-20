@@ -21,7 +21,7 @@ connectDB();
 // app.use(helmet());
 // // XSS-Clean
 // // This will sanitize any data in req.body, req.query, and req.params
-// app.use(xss());
+app.use(xss());
 
 //Define Routes
 app.use("/api/contacts", require("./routes/contacts"));
